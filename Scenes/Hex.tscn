@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dswci3ik7fsaw"]
+
+[node name="Hex" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Border" type="Line2D" parent="."]
+z_index = 1
+position = Vector2(-100, -87)
+points = PackedVector2Array(0, 87, 50, 0, 150, 0, 200, 87, 150, 174, 50, 174)
+closed = true
+width = 2.0
+joint_mode = 2
+
+[node name="1" type="Line2D" parent="."]
+position = Vector2(-50, -87)
+rotation = 1.0472
+points = PackedVector2Array(0, 0, 100, 0)
+width = 1.0
+default_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="2" type="Line2D" parent="."]
+position = Vector2(50, -87)
+rotation = 2.0944
+points = PackedVector2Array(0, 0, 100, 0)
+width = 1.0
+default_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="3" type="Line2D" parent="."]
+position = Vector2(100, 0)
+rotation = -3.14159
+points = PackedVector2Array(0, 0, 100, 0)
+width = 1.0
+default_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="4" type="Line2D" parent="."]
+rotation = 2.0944
+points = PackedVector2Array(0, 0, 100, 0)
+width = 1.0
+default_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="5" type="Line2D" parent="."]
+rotation = -3.14159
+points = PackedVector2Array(0, 0, 100, 0)
+width = 1.0
+default_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="6" type="Line2D" parent="."]
+rotation = 1.0472
+points = PackedVector2Array(0, 0, 100, 0)
+width = 1.0
+default_color = Color(0.6, 0.6, 0.6, 1)
