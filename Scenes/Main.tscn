@@ -8,5 +8,5 @@ script = ExtResource("1_rgh2o")
 
 [node name="Table" type="Node2D" parent="."]
 
-[node name="Hex" parent="." instance=ExtResource("2_idj7w")]
-position = Vector2(616, 361)
+[node name="Hex" parent="Table" instance=ExtResource("2_idj7w")]
+position = Vector2(60, 60)
