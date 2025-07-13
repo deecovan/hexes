@@ -5,4 +5,5 @@
 - Create vector Hex
 - Implement Drag-and-Drop
   - [use video](https://www.youtube.com/watch?v=cNvzGKCkNXg)
+  - [use repos](https://github.com/exploregamedev/Godot-demos)
  
