@@ -1,5 +1,9 @@
 # hexes GitHub repo
 
+## 25-07-14
+- Proto Table containers
+- Ready for Video UI Control nodes 2:00
+
 ## 25-07-13
 - Initialize project structure 
 - Create vector Hex

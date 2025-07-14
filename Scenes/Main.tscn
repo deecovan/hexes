@@ -1,12 +1,195 @@
-[gd_scene load_steps=3 format=3 uid="uid://6xevav3qkmfb"]
+[gd_scene load_steps=8 format=3 uid="uid://6xevav3qkmfb"]
 
 [ext_resource type="Script" uid="uid://dcyehhgv6gine" path="res://Scripts/Main.gd" id="1_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://dswci3ik7fsaw" path="res://Scenes/Hex.tscn" id="2_idj7w"]
+[ext_resource type="Theme" uid="uid://bcv2ny2u6crhk" path="res://Themes/Baloo Black/Baloo Black.tres" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://bonchvvpaxlrm" path="res://Assets/wallpaperbetter.jpg" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://dswci3ik7fsaw" path="res://Scenes/Hex.tscn" id="4_rgh2o"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rgh2o"]
+color = Color(1, 1, 1, 1)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pbw6q"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_v1gob"]
+color = Color(1, 1, 1, 1)
+vertical = true
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_rgh2o")
 
 [node name="Table" type="Node2D" parent="."]
 
-[node name="Hex" parent="Table" instance=ExtResource("2_idj7w")]
-position = Vector2(60, 60)
+[node name="TextureRect" type="TextureRect" parent="Table"]
+offset_left = -320.0
+offset_top = -160.0
+offset_right = 1600.0
+offset_bottom = 920.0
+pivot_offset = Vector2(960, 540)
+texture = ExtResource("2_kln2b")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Table"]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = ExtResource("2_idj7w")
+theme_override_styles/split_bar_background = SubResource("StyleBoxLine_rgh2o")
+split_offset = 20
+drag_area_highlight_in_editor = true
+
+[node name="VSplitContainerL" type="VSplitContainer" parent="Table/HSplitContainer"]
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+theme_override_styles/split_bar_background = SubResource("StyleBoxLine_pbw6q")
+split_offset = 20
+drag_area_margin_begin = 10
+drag_area_margin_end = 10
+drag_area_highlight_in_editor = true
+
+[node name="CenterContainer0" type="CenterContainer" parent="Table/HSplitContainer/VSplitContainerL"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBContainer0" type="VBoxContainer" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer0"]
+layout_mode = 2
+
+[node name="Container0" type="CenterContainer" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer0/VBContainer0"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button0" type="Button" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer0/VBContainer0/Container0"]
+custom_minimum_size = Vector2(120, 110)
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+
+[node name="Hex0" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer0/VBContainer0/Container0/Button0" instance=ExtResource("4_rgh2o")]
+position = Vector2(60, 55)
+
+[node name="CenterContainer1" type="CenterContainer" parent="Table/HSplitContainer/VSplitContainerL"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBContainer0" type="VBoxContainer" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer1"]
+layout_mode = 2
+
+[node name="Container0" type="CenterContainer" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer1/VBContainer0"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button0" type="Button" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer1/VBContainer0/Container0"]
+custom_minimum_size = Vector2(120, 110)
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+
+[node name="Hex0" parent="Table/HSplitContainer/VSplitContainerL/CenterContainer1/VBContainer0/Container0/Button0" instance=ExtResource("4_rgh2o")]
+position = Vector2(60, 55)
+
+[node name="HSplitContainerR" type="HSplitContainer" parent="Table/HSplitContainer"]
+layout_mode = 2
+theme_override_styles/split_bar_background = SubResource("StyleBoxLine_v1gob")
+drag_area_highlight_in_editor = true
+
+[node name="VSplitContainerC" type="VSplitContainer" parent="Table/HSplitContainer/HSplitContainerR"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_idj7w")
+theme_override_styles/split_bar_background = SubResource("StyleBoxLine_pbw6q")
+split_offset = 20
+drag_area_margin_end = 10
+drag_area_highlight_in_editor = true
+
+[node name="CenterContainer0" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBContainer0" type="VBoxContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer0"]
+layout_mode = 2
+
+[node name="Container0" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer0/VBContainer0"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button0" type="Button" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer0/VBContainer0/Container0"]
+custom_minimum_size = Vector2(120, 110)
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+
+[node name="Hex0" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer0/VBContainer0/Container0/Button0" instance=ExtResource("4_rgh2o")]
+position = Vector2(60, 55)
+
+[node name="CenterContainer1" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBContainer0" type="VBoxContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer1"]
+layout_mode = 2
+
+[node name="Container0" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer1/VBContainer0"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button0" type="Button" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer1/VBContainer0/Container0"]
+custom_minimum_size = Vector2(120, 110)
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+
+[node name="Hex0" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerC/CenterContainer1/VBContainer0/Container0/Button0" instance=ExtResource("4_rgh2o")]
+position = Vector2(60, 55)
+
+[node name="VSplitContainerR" type="VSplitContainer" parent="Table/HSplitContainer/HSplitContainerR"]
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+theme_override_styles/split_bar_background = SubResource("StyleBoxLine_pbw6q")
+split_offset = 20
+drag_area_margin_end = 10
+drag_area_highlight_in_editor = true
+
+[node name="CenterContainer0" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBContainer0" type="VBoxContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer0"]
+layout_mode = 2
+
+[node name="Container0" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer0/VBContainer0"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button0" type="Button" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer0/VBContainer0/Container0"]
+custom_minimum_size = Vector2(120, 110)
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+
+[node name="Hex0" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer0/VBContainer0/Container0/Button0" instance=ExtResource("4_rgh2o")]
+position = Vector2(60, 55)
+
+[node name="CenterContainer1" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBContainer0" type="VBoxContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer1"]
+layout_mode = 2
+
+[node name="Container0" type="CenterContainer" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer1/VBContainer0"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button0" type="Button" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer1/VBContainer0/Container0"]
+custom_minimum_size = Vector2(120, 110)
+layout_mode = 2
+theme = ExtResource("2_idj7w")
+
+[node name="Hex0" parent="Table/HSplitContainer/HSplitContainerR/VSplitContainerR/CenterContainer1/VBContainer0/Container0/Button0" instance=ExtResource("4_rgh2o")]
+position = Vector2(60, 55)
