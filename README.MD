@@ -1,7 +1,9 @@
 # hexes GitHub repo
 
 ## 25-07-14
-- Continue Video UI Control nodes 2:00
+- Continue Video "Drag and drop in Godot part 1, UI Control nodes" 2:00
+- @BAD version 3.4 - find it
+- @TODO find Drag and drop in Godot part 2...
 
 ## 25-07-14
 - Proto Table containers
