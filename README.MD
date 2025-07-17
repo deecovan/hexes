@@ -3,10 +3,10 @@
 ## 25-07-17 Learn
 - Investigate Inheritance, classes and interfaces in Godot
   - Interfaces: Use Object References and Callables:
-    [Docs en](https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_interfaces.html)
-    [Docs ru](https://docs.godotengine.org/ru/4.x/tutorials/best_practices/godot_interfaces.html)
+	[Docs en](https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_interfaces.html)
+	[Docs ru](https://docs.godotengine.org/ru/4.x/tutorials/best_practices/godot_interfaces.html)
   - Classes, Inheritance and super.method() calls
-    [Page en](https://www.gotut.net/inheritance-in-godot-4)
+	[Page en](https://www.gotut.net/inheritance-in-godot-4)
   - Stored in [PDFs](./UseThis/PDFs)
 
 - Add submodules
