@@ -1,6 +1,8 @@
 # hexes GitHub repo
 
 ## 25-07-17 Learn
+- !!! Its CRASHED !!! move project into [subfolder](./Godot_v4.4.1_project)
+
 - Investigate Inheritance, classes and interfaces in Godot
   - Interfaces: Use Object References and Callables:
     [Docs en](https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_interfaces.html)
