@@ -2,10 +2,18 @@
 
 ## 25-07-17 Learn
 - Investigate Inheritance, classes and interfaces in Godot
-- Using template, command and interpreter patterns
+  - Interfaces: Use Object References and Callables:
+    [Docs en](https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_interfaces.html)
+    [Docs ru](https://docs.godotengine.org/ru/4.x/tutorials/best_practices/godot_interfaces.html)
+  - Classes, Inheritance and super.method() calls
+    [Page en](https://www.gotut.net/inheritance-in-godot-4)
+  - Stored in [PDFs](./UseThis/PDFs)
+
 - Add submodules
   - UseThis/KanbanAppTutorial
   - UseThis/DragAndDropDemos
+
+- Try Using template, command and interpreter patterns
 
 ## 25-07-14
 - Continue Video "Drag and drop in Godot part 1, UI Control nodes" 2:00
