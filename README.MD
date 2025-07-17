@@ -3,7 +3,9 @@
 ## 25-07-17 Learn
 - Investigate Inheritance, classes and interfaces in Godot
 - Using template, command and interpreter patterns
-- submodule add UseThis/KanbanAppTutorial
+- Add submodules
+  - UseThis/KanbanAppTutorial
+  - UseThis/DragAndDropDemos
 
 ## 25-07-14
 - Continue Video "Drag and drop in Godot part 1, UI Control nodes" 2:00
