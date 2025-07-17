@@ -1,0 +1,3 @@
+[submodule "UseThis/KanbanAppTutorial"]
+	path = UseThis/KanbanAppTutorial
+	url = https://github.com/3ddelano/KanbanAppTutorial.git
