@@ -1,8 +1,10 @@
 # hexes GitHub repo
 
 ## 25.07.18
+- Update Styles and Table arrangement
 - Try video Drag and Drop Godot 4
   [YouTube](https://www.youtube.com/watch?v=8cV-5ByZLOE)
+
 
 ## 25-07-17 Learn
 - Its CRASHED
