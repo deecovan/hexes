@@ -1,6 +1,15 @@
 # hexes GitHub repo
 
-## 25.07.18
+## 25.07.19 Draw
+- Add principal Stages
+  - Begin turn stage
+  - Draw stage
+  - End turn stage
+- Add principal Draw
+  - Deck in TablePart 2
+  - Draw a Hex on Draw Stage 
+
+## 25.07.18 Drag-and-Drop 
 - Update Hex
   - Add Polygon2D
   - Change Lines to Segments
