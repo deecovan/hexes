@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Container
 
 func _can_drop_data(_data_position, data):
 	printt("_can_drop_data(position, data)", self, _data_position, data)
@@ -9,5 +9,5 @@ func _can_drop_data(_data_position, data):
 func _drop_data(_data_position, data):
 	printt("_drop_data(position, data)", _data_position, data)
 	# Implement Drop here
-	add_child(data.duplicate(), true)
+	find_child("Drop").add_child(data.duplicate(), true)
 	data.queue_free()

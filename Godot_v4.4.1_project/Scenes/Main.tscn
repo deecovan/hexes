@@ -104,12 +104,19 @@ size_flags_vertical = 3
 alignment = 1
 script = ExtResource("4_pbw6q")
 
-[node name="Card" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3" instance=ExtResource("5_v1gob")]
+[node name="Drop" type="GridContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 7
+
+[node name="Card" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3/Drop" instance=ExtResource("5_v1gob")]
 layout_mode = 2
 mouse_filter = 1
 script = null
 
-[node name="Card2" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3" instance=ExtResource("5_v1gob")]
+[node name="Card2" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3/Drop" instance=ExtResource("5_v1gob")]
 layout_mode = 2
 mouse_filter = 1
 script = null
