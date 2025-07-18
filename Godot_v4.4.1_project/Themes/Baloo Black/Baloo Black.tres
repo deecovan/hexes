@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://0tmwahacdlxd" path="res://Themes/Baloo Black/fonts/Baloo2/Baloo2-Medium.ttf" id="1_ghfd7"]
 [ext_resource type="StyleBox" uid="uid://dhht5t3wf3jsl" path="res://Styles/new_style_box_disabled.tres" id="2_4xbtq"]
 [ext_resource type="Texture2D" uid="uid://bb04sx7ibw7ws" path="res://Themes/Baloo Black/icons.svg" id="2_ofa5c"]
-[ext_resource type="StyleBox" uid="uid://n7sa5oibu3ej" path="res://Styles/new_style_box_focus.tres" id="3_3ni1o"]
+[ext_resource type="StyleBox" uid="uid://fkqeocde7blm" path="res://Styles/new_style_box_empty.tres" id="3_3ni1o"]
 [ext_resource type="StyleBox" uid="uid://cbsbyeuwqq3r5" path="res://Styles/new_style_box_hover.tres" id="4_3ni1o"]
 [ext_resource type="StyleBox" uid="uid://c15hs0d3j203" path="res://Styles/new_style_box_normal.tres" id="4_4xbtq"]
 [ext_resource type="StyleBox" uid="uid://ex5k5jwo1kag" path="res://Styles/new_style_box_pressed.tres" id="5_48jpd"]
@@ -813,8 +813,8 @@ Button/styles/disabled = ExtResource("2_4xbtq")
 Button/styles/disabled_mirrored = ExtResource("2_4xbtq")
 Button/styles/focus = ExtResource("3_3ni1o")
 Button/styles/hover = ExtResource("4_3ni1o")
-Button/styles/hover_mirrored = null
-Button/styles/hover_pressed = null
+Button/styles/hover_mirrored = ExtResource("4_3ni1o")
+Button/styles/hover_pressed = ExtResource("5_48jpd")
 Button/styles/normal = ExtResource("4_4xbtq")
 Button/styles/pressed = ExtResource("5_48jpd")
 CheckBox/colors/font_color = Color(0.88, 0.88, 0.88, 1)

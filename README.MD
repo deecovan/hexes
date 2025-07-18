@@ -1,6 +1,9 @@
 # hexes GitHub repo
 
 ## 25.07.18
+- Update Hex
+  - Add Polygon2D
+  - Change Lines to Segments
 - Add and Remove logic
   - Optimize Drag Implement Drop
 - Move DropData to TablePart
