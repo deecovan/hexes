@@ -1,11 +1,22 @@
 # hexes GitHub repo
 
 ## 25.07.19 Draw
-- Add principal Stages
-  - Begin turn stage
-  - Draw stage
-  - End turn stage
-- Add principal Draw
+- Add Owners
+  - PLAYER
+  - OPPONENT
+- Add Phases
+  - Begin turn phase
+  - Draw phase
+  - End turn phase
+- Add turn_sequence
+  - For each Owner each Phase
+- Add current_stage 
+  - is Turn-Owner-Phase number
+
+- ...Start Turn Sequence from current_stage: 
+  - PLAYER BEGIN_TURN
+  - Pass to DRAW_HEX
+- ...Add principal Draw
   - Deck in TablePart 2
   - Draw a Hex on Draw Stage 
 

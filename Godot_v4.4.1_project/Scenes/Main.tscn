@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://6xevav3qkmfb"]
+[gd_scene load_steps=11 format=3 uid="uid://6xevav3qkmfb"]
 
 [ext_resource type="Script" uid="uid://dcyehhgv6gine" path="res://Scripts/Main.gd" id="1_rgh2o"]
 [ext_resource type="Theme" uid="uid://bcv2ny2u6crhk" path="res://Themes/Baloo Black/Baloo Black.tres" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://bonchvvpaxlrm" path="res://Assets/wallpaperbetter.jpg" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://ca63w0n0k62eo" path="res://Scripts/StageController.gd" id="3_v1gob"]
 [ext_resource type="Script" uid="uid://c3ia6dxg53tq6" path="res://Scripts/TablePart.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://iyd3t2chjorn" path="res://Scenes/Card.tscn" id="5_v1gob"]
 
@@ -24,13 +25,24 @@ script = ExtResource("1_rgh2o")
 
 [node name="Table" type="Node2D" parent="."]
 
-[node name="BG" type="TextureRect" parent="Table"]
-offset_left = -320.0
-offset_top = -160.0
-offset_right = 1600.0
-offset_bottom = 920.0
-pivot_offset = Vector2(960, 540)
+[node name="TableZones" type="TextureRect" parent="Table"]
+offset_top = 720.0
+offset_right = 1952.0
+offset_bottom = 2000.0
+rotation = -1.5708
 texture = ExtResource("2_kln2b")
+
+[node name="OpponentZone" type="Line2D" parent="Table/TableZones"]
+points = PackedVector2Array(1232, 1280, 1232, 5.38524e-05)
+width = 4.0
+
+[node name="PlayerZone" type="Line2D" parent="Table/TableZones"]
+position = Vector2(-512, -2.23802e-05)
+points = PackedVector2Array(1232, 1280, 1232, 5.38524e-05)
+width = 4.0
+
+[node name="StageController" type="Node" parent="Table/TableZones"]
+script = ExtResource("3_v1gob")
 
 [node name="HSplitContainerL" type="HSplitContainer" parent="Table"]
 offset_right = 1280.0
