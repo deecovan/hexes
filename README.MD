@@ -1,7 +1,12 @@
 # hexes GitHub repo
 
+## 25.07.18
+- Try video Drag and Drop Godot 4
+  [YouTube](https://www.youtube.com/watch?v=8cV-5ByZLOE)
+
 ## 25-07-17 Learn
-- !!! Its CRASHED !!! move project into [subfolder](./Godot_v4.4.1_project)
+- Its CRASHED
+  - move project into [subfolder](./Godot_v4.4.1_project)
 
 - Investigate Inheritance, classes and interfaces in Godot
   - Interfaces: Use Object References and Callables:
