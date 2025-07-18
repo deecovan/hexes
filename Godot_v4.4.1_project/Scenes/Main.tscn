@@ -53,7 +53,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 2
-script = ExtResource("4_pbw6q")
 
 [node name="Card" parent="Table/HSplitContainerL/VSplitContainerL/TablePart1" instance=ExtResource("5_v1gob")]
 layout_mode = 2
@@ -103,14 +102,17 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
+script = ExtResource("4_pbw6q")
 
 [node name="Card" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3" instance=ExtResource("5_v1gob")]
 layout_mode = 2
 mouse_filter = 1
+script = null
 
 [node name="Card2" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3" instance=ExtResource("5_v1gob")]
 layout_mode = 2
 mouse_filter = 1
+script = null
 
 [node name="TablePart4" type="HBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC"]
 custom_minimum_size = Vector2(160, 0)
