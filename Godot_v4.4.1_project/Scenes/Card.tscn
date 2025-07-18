@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://iyd3t2chjorn"]
+
+[ext_resource type="Theme" uid="uid://bcv2ny2u6crhk" path="res://Themes/Baloo Black/Baloo Black.tres" id="1_3p273"]
+[ext_resource type="PackedScene" uid="uid://dswci3ik7fsaw" path="res://Scenes/Hex.tscn" id="2_h8wm0"]
+
+[node name="Card" type="Button"]
+custom_minimum_size = Vector2(120, 110)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_3p273")
+
+[node name="Hex" parent="." instance=ExtResource("2_h8wm0")]
+position = Vector2(60, 55)

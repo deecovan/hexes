@@ -1,6 +1,10 @@
 # hexes GitHub repo
 
 ## 25.07.18
+- Add principal Drag-and-Drop control
+  - can track Drop possition
+  - need to get proper Drag data
+    - Use KanbanApp source code to do it
 - Add TablePart script with basic ..._data() functions
 - Update Styles and Table arrangement
 - Try video Drag and Drop Godot 4
