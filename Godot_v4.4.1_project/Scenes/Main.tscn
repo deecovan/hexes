@@ -21,7 +21,7 @@ script = ExtResource("1_rgh2o")
 
 [node name="Table" type="Node2D" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Table"]
+[node name="BG" type="TextureRect" parent="Table"]
 offset_left = -320.0
 offset_top = -160.0
 offset_right = 1600.0
@@ -73,7 +73,7 @@ theme = ExtResource("2_idj7w")
 [node name="Hex" parent="Table/HSplitContainerL/VSplitContainerL/TablePart1/Card2" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="HSeparator" type="HSeparator" parent="Table/HSplitContainerL/VSplitContainerL/TablePart1"]
+[node name="HS" type="HSeparator" parent="Table/HSplitContainerL/VSplitContainerL/TablePart1"]
 layout_mode = 2
 
 [node name="TablePart2" type="VBoxContainer" parent="Table/HSplitContainerL/VSplitContainerL"]
@@ -110,63 +110,57 @@ split_offset = 20
 drag_area_margin_end = 10
 drag_area_highlight_in_editor = true
 
-[node name="TablePart1" type="HBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC"]
+[node name="TablePart3" type="HBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart1"]
+[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart1/Card" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3/Card" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="Card2" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart1"]
+[node name="Card2" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart1/Card2" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart3/Card2" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="HSeparator" type="HSeparator" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart1"]
-layout_mode = 2
-
-[node name="TablePart2" type="HBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC"]
+[node name="TablePart4" type="HBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart2"]
+[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart4"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart2/Card" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart4/Card" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="Card2" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart2"]
+[node name="Card2" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart4"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart2/Card2" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart4/Card2" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
-
-[node name="HSeparator" type="HSeparator" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerC/TablePart2"]
-layout_mode = 2
 
 [node name="VSplitContainerR" type="VSplitContainer" parent="Table/HSplitContainerL/HSplitContainerR"]
 layout_mode = 2
@@ -177,52 +171,52 @@ drag_area_margin_begin = 10
 drag_area_margin_end = 10
 drag_area_highlight_in_editor = true
 
-[node name="TablePart1" type="VBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR"]
+[node name="TablePart5" type="VBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 2
 
-[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart1"]
+[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart5"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart1/Card" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart5/Card" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="Card2" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart1"]
+[node name="Card2" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart5"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart1/Card2" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart5/Card2" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="HSeparator" type="HSeparator" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart1"]
+[node name="HS" type="HSeparator" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart5"]
 layout_mode = 2
 
-[node name="TablePart2" type="VBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR"]
+[node name="TablePart6" type="VBoxContainer" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 2
 
-[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart2"]
+[node name="Card" type="Button" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart6"]
 custom_minimum_size = Vector2(120, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_idj7w")
 
-[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart2/Card" instance=ExtResource("4_rgh2o")]
+[node name="Hex" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart6/Card" instance=ExtResource("4_rgh2o")]
 position = Vector2(60, 55)
 
-[node name="HSeparator" type="HSeparator" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart2"]
+[node name="HS" type="HSeparator" parent="Table/HSplitContainerL/HSplitContainerR/VSplitContainerR/TablePart6"]
 layout_mode = 2
