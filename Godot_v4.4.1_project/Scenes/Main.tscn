@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://6xevav3qkmfb"]
+[gd_scene load_steps=9 format=3 uid="uid://6xevav3qkmfb"]
 
 [ext_resource type="Script" uid="uid://dcyehhgv6gine" path="res://Scripts/Main.gd" id="1_rgh2o"]
 [ext_resource type="Theme" uid="uid://bcv2ny2u6crhk" path="res://Themes/Baloo Black/Baloo Black.tres" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://bonchvvpaxlrm" path="res://Assets/wallpaperbetter.jpg" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://bis1svlrhypo5" path="res://Scripts/TablePart.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://dswci3ik7fsaw" path="res://Scenes/Hex.tscn" id="4_rgh2o"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rgh2o"]
@@ -52,6 +53,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 2
+script = ExtResource("4_pbw6q")
 
 [node name="Card" type="Button" parent="Table/HSplitContainerL/VSplitContainerL/TablePart1"]
 custom_minimum_size = Vector2(120, 110)

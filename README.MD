@@ -1,6 +1,7 @@
 # hexes GitHub repo
 
 ## 25.07.18
+- Add TablePart script with basic ..._data() functions
 - Update Styles and Table arrangement
 - Try video Drag and Drop Godot 4
   [YouTube](https://www.youtube.com/watch?v=8cV-5ByZLOE)
