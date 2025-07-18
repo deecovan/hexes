@@ -1,6 +1,7 @@
 # hexes GitHub repo
 
 ## 25.07.18
+- Add TablePart \_can_drop_data function
 - Add principal Drag-and-Drop control
   - can track Drop possition
   - need to get proper Drag data
