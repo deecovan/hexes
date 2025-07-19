@@ -1,24 +1,22 @@
 # hexes GitHub repo
 
+## 25.07.19 FSM
+- Compare EnumStateController with ConstStateController
+  - Use Enum
+
 ## 25.07.19 Draw
 - Add Owners
   - PLAYER
   - OPPONENT
-- Add Phases
-  - Begin turn phase
-  - Draw phase
-  - End turn phase
+- Add States
+  - Begin turn state
+  - Draw state
+  - End turn state
 - Add turn_sequence
-  - For each Owner each Phase
+  - For each Owner each State
 - Add current_stage 
-  - is Turn-Owner-Phase number
-
-- ...Start Turn Sequence from current_stage: 
-  - PLAYER BEGIN_TURN
-  - Pass to DRAW_HEX
-- ...Add principal Draw
-  - Deck in TablePart 2
-  - Draw a Hex on Draw Stage 
+  - is Const: index is Turn number, value is Owner+State number
+  - in Enum: index is Turn number, value is pair of Owner and State 
 
 ## 25.07.18 Drag-and-Drop 
 - Update Hex

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dcyehhgv6gine" path="res://Scripts/Main.gd" id="1_rgh2o"]
 [ext_resource type="Theme" uid="uid://bcv2ny2u6crhk" path="res://Themes/Baloo Black/Baloo Black.tres" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://bonchvvpaxlrm" path="res://Assets/wallpaperbetter.jpg" id="2_kln2b"]
-[ext_resource type="Script" uid="uid://ca63w0n0k62eo" path="res://Scripts/StageController.gd" id="3_v1gob"]
+[ext_resource type="Script" uid="uid://ceutfde2jmipt" path="res://Scripts/EnumStateController.gd" id="3_v1gob"]
 [ext_resource type="Script" uid="uid://c3ia6dxg53tq6" path="res://Scripts/TablePart.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://iyd3t2chjorn" path="res://Scenes/Card.tscn" id="5_v1gob"]
 
@@ -41,7 +41,7 @@ position = Vector2(-512, -2.23802e-05)
 points = PackedVector2Array(1232, 1280, 1232, 5.38524e-05)
 width = 4.0
 
-[node name="StageController" type="Node" parent="Table/TableZones"]
+[node name="StateController" type="Node" parent="Table/TableZones"]
 script = ExtResource("3_v1gob")
 
 [node name="HSplitContainerL" type="HSplitContainer" parent="Table"]
