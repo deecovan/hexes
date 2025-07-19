@@ -1,6 +1,15 @@
 # hexes GitHub repo
 
 ## 25.07.19 FSM
+
+- ...Start Turn Sequence from current_stage: 
+  - Player BeginTurn
+  - Pass to DrawHex
+- ...Add principal Draw
+  - Deck in TablePart2
+  - Draw a Hex on DrawHex State 
+  - Hand in TablePart4
+
 - Compare EnumStateController with ConstStateController
   - Use Enum
 

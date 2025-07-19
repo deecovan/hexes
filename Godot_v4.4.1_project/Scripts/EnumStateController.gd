@@ -23,12 +23,12 @@ func _ready() -> void:
 	prints("Prev.   stage:", get_stage_data(current_stage-1))
 	prints("Next    stage:", get_stage_data(current_stage+1))
 	## Start Turn Sequence from current_stage: 
-	#- ...Start Turn Sequence from current_stage: 
-	  #- PLAYER BEGIN_TURN
-	  #- Pass to DRAW_HEX
+	  #- Player BeginTurn
+	  #- Pass to DrawHex
 	#- ...Add principal Draw
-	  #- Deck in TablePart 2
-	  #- Draw a Hex on Draw Stage 
+	  #- Deck in TablePart2
+	  #- Draw a Hex on DrawHex State 
+	  #- Hand in TablePart4
 	
 func get_stage_data(stage: int) -> Dictionary:
 	print("get_stage_data(stage=" + str(stage) + ")")
