@@ -1,34 +1,29 @@
 extends Node
 
 enum Owners {
-	Player,
+	User,
 	Opponent
 }
-enum States {
+enum TurnStates {
 	BeginTurn,
 	DrawHex,
 	EndTurn
 }
+enum GameStates {
+	Starting = 0,
+	Playing,
+	Ending
+}
 var turn_sequence = []
-var current_stage = 0
+var current_stage = GameStates.Starting
+var tests_finished = false
 
 func _ready() -> void:
+	## Init Turn sequence
 	for own in Owners:
-		for stt in States:
-			turn_sequence.append([own, stt])
-	## Test output
-	prints("Turn sequence:", turn_sequence)
-	prints("Random  stage:", get_stage_data(randi_range(-10,10)))
-	prints("Current stage:", get_stage_data(current_stage))
-	prints("Prev.   stage:", get_stage_data(current_stage-1))
-	prints("Next    stage:", get_stage_data(current_stage+1))
-	## Start Turn Sequence from current_stage: 
-	  #- Player BeginTurn
-	  #- Pass to DrawHex
-	#- ...Add principal Draw
-	  #- Deck in TablePart2
-	  #- Draw a Hex on DrawHex State 
-	  #- Hand in TablePart4
+		for tst in TurnStates:
+			turn_sequence.append([own, tst])
+	run_tests(turn_sequence, false)
 	
 func get_stage_data(stage: int) -> Dictionary:
 	print("get_stage_data(stage=" + str(stage) + ")")
@@ -41,3 +36,16 @@ func get_stage_data(stage: int) -> Dictionary:
 		"Owner": turn_sequence[stage][0],
 		"State": turn_sequence[stage][1],
 	}
+
+func run_tests(_message, _print = false, _force = false) -> void:
+	if tests_finished and not _force:
+		return
+	## Test output
+	if _print:
+		prints("_______________|Tests for", self.name)
+		prints(_message)
+		prints("Random  stage:", get_stage_data(randi_range(-10,10)))
+		prints("Current stage:", get_stage_data(current_stage))
+		prints("Prev.   stage:", get_stage_data(current_stage-1))
+		prints("Next    stage:", get_stage_data(current_stage+1))
+	tests_finished = true

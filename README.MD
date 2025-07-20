@@ -1,8 +1,14 @@
 # hexes GitHub repo
 
+## 25.07.20 Balanced Deck
+- Add Player, Deck and Card classes
+- In the Card, implement the Balanced generator
+- Generate 60 cards in the Deck
+- Test it using Console output 
+
 ## 25.07.19 FSM
 - Start Turn Sequence from current_stage:
-  - Draw a Hex 
+  - Draw
 - Compare EnumStateController with ConstStateController
   - Use Enum
 
