@@ -1,16 +1,16 @@
 # hexes GitHub repo
 
-## 25.0.21 [Draw] ant terms
-- Start [Turn Sequence] from current_state:
-  - [Begin Turn]
-  - [Draw]
-  - [End Turn]
+## 25.0.21 [Draw](./Docs/Draw.MD) and [Terms Index](./Docs/Index.MD)
+- Start [Turn Sequence](./Docs/TurnSequence.MD) from current_state:
+  - [Begin Turn](./Docs/BeginTurn.MD)
+  - [Draw](./Docs/Draw.MD)
+  - [End Turn](./Docs/EndTurn.MD)
 - ...
-  - on [Begin Turn] Implement [Coins]
+  - on [Begin Turn](./Docs/BeginTurn.MD) Implement [Coins](./Docs/Coins.MD)
     - Add 1 coin 
-    - Roll coins [G/W]
-      - [G] to [play] the [Creatures]
-      - [W] to [attach] the [Abilities]
+    - Roll coins [G/W](./Docs/GW.MD)
+      - [G](./Docs/G.MD) to [Play](./Docs/Play.MD) the [Hexes](./Docs/Hexes.MD)
+      - [W](./Docs/W.MD) to [Attach](./Docs/Attach.MD) the [Abilities](./Docs/Abilities.MD)
 
 ## 25.07.20 Balanced Deck
 - Add Player, Deck and Card classes
