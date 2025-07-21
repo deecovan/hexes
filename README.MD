@@ -1,5 +1,17 @@
 # hexes GitHub repo
 
+## 25.0.21 [Draw] ant terms
+- Start [Turn Sequence] from current_state:
+  - [Begin Turn]
+  - [Draw]
+  - [End Turn]
+- ...
+  - on [Begin Turn] Implement [Coins]
+    - Add 1 coin 
+    - Roll coins [G/W]
+      - [G] to [play] the [Creatures]
+      - [W] to [attach] the [Abilities]
+
 ## 25.07.20 Balanced Deck
 - Add Player, Deck and Card classes
 - In the Card, implement the Balanced generator
@@ -7,8 +19,6 @@
 - Test it using Console output 
 
 ## 25.07.19 FSM
-- Start Turn Sequence from current_stage:
-  - Draw
 - Compare EnumStateController with ConstStateController
   - Use Enum
 
