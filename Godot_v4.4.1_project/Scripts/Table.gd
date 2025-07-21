@@ -33,7 +33,7 @@ class CardClass extends Object:
 		var power_set = false
 		var health_set = false
 		var counter = 0
-		while Value == 0:
+		while power_set == false and health_set == false:
 			var power_chance = randf() * 2
 			var health_chance = randf() * 2
 			counter += 1
@@ -59,11 +59,18 @@ class CardClass extends Object:
 						health_set = true
 					else:
 						health_chance_counted += normal_health_chances[i]
+						
 			## Calculate the Value based on the Power and Health 
-			Value = (
-				(Power + 1) * normal_power_value[Power] +
-				(Health + 1) * normal_health_value[Health]
-				) / (normal_power_value[Power] + normal_health_value[Health])
+			var PowerValueNorn = 1
+			var HealthValueNorn = 1
+			if Power > 0: 
+				PowerValueNorn  = Power * normal_power_value[Power]
+			if Health > 0: 
+				HealthValueNorn  = Health * normal_health_value[Health]
+			var DeNorn = normal_power_value[Power] + normal_health_value[Health]
+			if DeNorn == 0:
+				DeNorn = 1
+			Value = (PowerValueNorn + HealthValueNorn) / DeNorn
 			
 			## Sometimes the shit happends but i can fix it
 			# Just set the minimal values    
@@ -116,7 +123,7 @@ func _process(_delta: float) -> void:
 			var cards = []
 			for c in Player.Deck:
 				cards.append(c.Name)
-				card_stats_v[c.Value-1] += 1
+				card_stats_v[c.Value] += 1
 				card_stats_a[c.Power] += 1
 				card_stats_d[c.Health] += 1
 			run_tests([cards, card_stats_v, card_stats_a, card_stats_d], true)
