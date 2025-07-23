@@ -29,13 +29,13 @@ func _ready() -> void:
 func next_game_state() -> void:
 	match current_state:
 		GameStates.Starting:
-			print_rich("[color=green]GameStates.Playing")
+			print_rich("switch [color=green]Playing")
 			current_state = GameStates.Playing
 		GameStates.Playing:
-			print_rich("[color=green]GameStates.Ending")
+			print_rich("switch [color=yellow]Ending")
 			current_state = GameStates.Ending
 		GameStates.Ending:
-			print_rich("[color=red]GameStates.Ending")
+			print_rich("switch [color=red]Finished")
 			current_state = GameStates.Finished
 	
 func get_state_data(state: int) -> Dictionary:

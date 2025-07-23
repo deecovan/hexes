@@ -1,6 +1,6 @@
 extends Node
 
-class CardClass extends Object:
+class HexClass extends Object:
 	var Name
 	var Value = 0
 	var Power = 0
@@ -84,27 +84,41 @@ class CardClass extends Object:
 						
 		Name = str(Value) + ": " + str(Power) + "/" + str(Health)
 
-
 class DeckClass extends Object:
-	var Cards = []
-	func Draw():
-		pass
+	var Hexes = []
+	var hex = null
+	func Draw() -> HexClass:
+		if Hexes.size() > 0:
+			hex = Hexes[0]
+			Hexes.erase(hex)
+		else:
+			## Deck is empty! Signal GameOver!
+			printerr("Deck is empty! Signal GameOver!")
+		return hex
+	
+	func GetNames(hexes = Hexes) -> Array:
+		var a = []
+		for h in hexes:
+			a.append(h.Name)
+		return a
 
 class PlayerClass extends Object:
 	var Id: int
-	var Deck = []
+	var Deck = DeckClass.new()
 	var Hand = []
 	var Health = 20
-	var DeckSize = 40
-	var HandSize = 8
+	var DeckSize = 60
+	var HandSize = 6
 	
 var StateController: Node
 var Player: PlayerClass
 var Opponent: PlayerClass
+var turn_owner: PlayerClass
+var turn_state
 
-var card_stats_a = [0,0,0,0,0,0]
-var card_stats_d = [0,0,0,0,0,0]
-var card_stats_v = [0,0,0,0,0,0]
+var hex_stats_a = [0,0,0,0,0,0]
+var hex_stats_d = [0,0,0,0,0,0]
+var hex_stats_v = [0,0,0,0,0,0]
 
 var tests_finished = false
 
@@ -114,28 +128,63 @@ func _ready() -> void:
 	Player.Id = StateController.Owners.User
 	Opponent = PlayerClass.new()
 	Opponent.Id = StateController.Owners.Opponent
+	## Starting Player
+	turn_owner = Player
+	turn_state = StateController.TurnStates.BeginTurn
 	for i in Player.DeckSize:
-		Player.Deck.append(CardClass.new())
-	
+		Player.Deck.Hexes.append(HexClass.new())
 
 func _process(_delta: float) -> void:
+	
 	match StateController.current_state:
+		
 		StateController.GameStates.Starting:
-			print_rich("[color=blue]GameStates.Starting")
-			var cards = []
-			for c in Player.Deck:
-				cards.append(c.Name)
-				card_stats_v[c.Value] += 1
-				card_stats_a[c.Power] += 1
-				card_stats_d[c.Health] += 1
-			run_tests([cards, card_stats_v, card_stats_a, card_stats_d], true)
+			print_rich("now... [color=blue]Starting")
+			var hexes = []
+			for c in Player.Deck.Hexes:
+				hexes.append(c.Name)
+				hex_stats_v[c.Value] += 1
+				hex_stats_a[c.Power] += 1
+				hex_stats_d[c.Health] += 1
+			run_tests([hexes, hex_stats_v, hex_stats_a, hex_stats_d], true)
+			## First Shuffle
+			print_rich("[b]Shuffle...")
+			Player.Deck.Hexes.shuffle()
+			## Than Draw starting Hand
+			print_rich("[b]Draw " + str(Player.HandSize) + "...")
+			for i in Player.HandSize:
+				Player.Hand.append(Player.Deck.Draw())
+			print(Player.Deck.GetNames(Player.Hand))
 			StateController.next_game_state()
+			
 		StateController.GameStates.Playing:
-			print_rich("[color=blue]GameStates.Playing")
-			StateController.next_game_state()
+			print_rich("now... [color=blue]Playing")
+			## Add Turns implementation from here
+			var owner_key = StateController.Owners.find_key(turn_owner.Id)
+			var state_key = StateController.TurnStates.find_key(turn_state)
+			prints("Owner:", owner_key)
+			prints("State:", state_key)
+			match turn_state:
+				StateController.TurnStates.BeginTurn:
+					## Untap
+					print_rich("[i]Rotate...")
+					## Add Coins
+					print_rich("[i]Add coins...")
+					turn_state = StateController.TurnStates.DrawHex
+				StateController.TurnStates.DrawHex:
+					## Draw a card
+					print_rich("[i]Player.Hand.append(Player.Deck.Draw())")
+					Player.Hand.append(Player.Deck.Draw())
+					print(Player.Deck.GetNames(Player.Hand))
+					## Next StateController.TurnStates. Play Hex, ...
+					turn_state = StateController.TurnStates.EndTurn
+				StateController.TurnStates.EndTurn:
+					StateController.next_game_state()
+			
 		StateController.GameStates.Ending:
-			print_rich("[color=blue]GameStates.Ending")
+			print_rich("now... [color=blue]Ending")
 			StateController.next_game_state()
+			
 		StateController.GameStates.Finished:
 			pass
 
