@@ -1,7 +1,10 @@
 # hexes GitHub repo
 
 ## 25.07.23 Begin, Draw, End
- 
+- implement working FSM 
+  - Begin-Turn 
+  - Draw-Hex 
+- With more (empty) states
 
 ## 25.07.21 [Draw](./Docs/Draw.MD) and [Terms Index](./Docs/Index.MD)
 - Start [Turn Sequence](./Docs/TurnSequence.MD) from current_state:
