@@ -116,10 +116,12 @@ func _ready() -> void:
 	Opponent.Id = StateController.Owners.Opponent
 	for i in Player.DeckSize:
 		Player.Deck.append(CardClass.new())
+	
 
 func _process(_delta: float) -> void:
-	match StateController.current_stage:
+	match StateController.current_state:
 		StateController.GameStates.Starting:
+			print_rich("[color=blue]GameStates.Starting")
 			var cards = []
 			for c in Player.Deck:
 				cards.append(c.Name)
@@ -127,6 +129,14 @@ func _process(_delta: float) -> void:
 				card_stats_a[c.Power] += 1
 				card_stats_d[c.Health] += 1
 			run_tests([cards, card_stats_v, card_stats_a, card_stats_d], true)
+			StateController.current_state = StateController.GameStates.Playing
+		StateController.GameStates.Playing:
+			print_rich("[color=blue]GameStates.Playing")
+			StateController.current_state = StateController.GameStates.Ending
+		StateController.GameStates.Ending:
+			print_rich("[color=blue]GameStates.Ending")
+			StateController.current_state = StateController.GameStates.Finished
+		StateController.GameStates.Finished:
 			pass
 
 func run_tests(_message, _print = false, _force = false) -> void:

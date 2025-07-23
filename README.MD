@@ -1,6 +1,9 @@
 # hexes GitHub repo
 
-## 25.0.21 [Draw](./Docs/Draw.MD) and [Terms Index](./Docs/Index.MD)
+## 25.07.23 Begin, Draw, End
+ 
+
+## 25.07.21 [Draw](./Docs/Draw.MD) and [Terms Index](./Docs/Index.MD)
 - Start [Turn Sequence](./Docs/TurnSequence.MD) from current_state:
   - [Begin Turn](./Docs/BeginTurn.MD)
   - [Draw](./Docs/Draw.MD)

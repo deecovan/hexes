@@ -12,10 +12,11 @@ enum TurnStates {
 enum GameStates {
 	Starting = 0,
 	Playing,
-	Ending
+	Ending,
+	Finished
 }
 var turn_sequence = []
-var current_stage = GameStates.Starting
+var current_state = GameStates.Starting
 var tests_finished = false
 
 func _ready() -> void:
@@ -25,16 +26,16 @@ func _ready() -> void:
 			turn_sequence.append([own, tst])
 	run_tests(turn_sequence, false)
 	
-func get_stage_data(stage: int) -> Dictionary:
-	print("get_stage_data(stage=" + str(stage) + ")")
+func get_state_data(state: int) -> Dictionary:
+	print("get_state_data(state=" + str(state) + ")")
 	## Prevent Array Out of index error
-	while stage < 0:
-		stage += turn_sequence.size()
-	while stage > turn_sequence.size() - 1:
-		stage -= turn_sequence.size()
+	while state < 0:
+		state += turn_sequence.size()
+	while state > turn_sequence.size() - 1:
+		state -= turn_sequence.size()
 	return {
-		"Owner": turn_sequence[stage][0],
-		"State": turn_sequence[stage][1],
+		"Owner": turn_sequence[state][0],
+		"State": turn_sequence[state][1],
 	}
 
 func run_tests(_message, _print = false, _force = false) -> void:
@@ -44,8 +45,8 @@ func run_tests(_message, _print = false, _force = false) -> void:
 	if _print:
 		prints("_______________|Tests for", self.name)
 		prints(_message)
-		prints("Random  stage:", get_stage_data(randi_range(-10,10)))
-		prints("Current stage:", get_stage_data(current_stage))
-		prints("Prev.   stage:", get_stage_data(current_stage-1))
-		prints("Next    stage:", get_stage_data(current_stage+1))
+		prints("Random  state:", get_state_data(randi_range(-10,10)))
+		prints("Current state:", get_state_data(current_state))
+		prints("Prev.   state:", get_state_data(current_state-1))
+		prints("Next    state:", get_state_data(current_state+1))
 	tests_finished = true
