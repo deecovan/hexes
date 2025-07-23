@@ -26,6 +26,18 @@ func _ready() -> void:
 			turn_sequence.append([own, tst])
 	run_tests(turn_sequence, false)
 	
+func next_game_state() -> void:
+	match current_state:
+		GameStates.Starting:
+			print_rich("[color=green]GameStates.Playing")
+			current_state = GameStates.Playing
+		GameStates.Playing:
+			print_rich("[color=green]GameStates.Ending")
+			current_state = GameStates.Ending
+		GameStates.Ending:
+			print_rich("[color=red]GameStates.Ending")
+			current_state = GameStates.Finished
+	
 func get_state_data(state: int) -> Dictionary:
 	print("get_state_data(state=" + str(state) + ")")
 	## Prevent Array Out of index error

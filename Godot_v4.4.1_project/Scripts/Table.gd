@@ -129,13 +129,13 @@ func _process(_delta: float) -> void:
 				card_stats_a[c.Power] += 1
 				card_stats_d[c.Health] += 1
 			run_tests([cards, card_stats_v, card_stats_a, card_stats_d], true)
-			StateController.current_state = StateController.GameStates.Playing
+			StateController.next_game_state()
 		StateController.GameStates.Playing:
 			print_rich("[color=blue]GameStates.Playing")
-			StateController.current_state = StateController.GameStates.Ending
+			StateController.next_game_state()
 		StateController.GameStates.Ending:
 			print_rich("[color=blue]GameStates.Ending")
-			StateController.current_state = StateController.GameStates.Finished
+			StateController.next_game_state()
 		StateController.GameStates.Finished:
 			pass
 
