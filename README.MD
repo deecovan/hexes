@@ -1,5 +1,15 @@
 # hexes GitHub repo
 
+## 25.07.25 Implement signals to FSM
+- Start with 6 cards
+- Loop 3 times
+  - Limit to 8 cards
+  - Stop on 9th
+  - Discard the card with button
+    * Add button signal
+    * Add Discard func
+    * Check and loop
+
 ## 25.07.23 Begin, Draw, End
 - implement working FSM 
   - Begin-Turn 
