@@ -26,7 +26,6 @@ antialiased = true
 [node name="A2" type="Line2D" parent="."]
 position = Vector2(2.38419e-07, 0)
 rotation = -2.0944
-scale = Vector2(1, 1)
 points = PackedVector2Array(0, 0, -25, -43, 25, -43)
 closed = true
 width = 1.2
