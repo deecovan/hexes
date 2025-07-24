@@ -109,6 +109,7 @@ class PlayerClass extends Object:
 	var Health = 20
 	var DeckSize = 60
 	var HandSize = 6
+	var MaxHandSize = 8
 	
 	var Hand = []
 			
@@ -120,7 +121,12 @@ class PlayerClass extends Object:
 	func emitHandChanged():
 		if HandHash != hash(Hand):
 			HandHash = hash(Hand)
+			print_rich("[i]emitHandChanged()")
 			## Emit Hand Changed
+			
+	func emitHandOverdraw():
+		print_rich("[i]emitHandOverdraw()")
+		## Emit Hand Overdraw
 		
 var StateController: Node
 var Player: PlayerClass
@@ -177,6 +183,7 @@ func _process(_delta: float) -> void:
 			var state_key = StateController.TurnStates.find_key(turn_state)
 			prints("Owner:", owner_key)
 			prints("State:", state_key)
+			
 			match turn_state:
 				StateController.TurnStates.BeginTurn:
 					## Untap
@@ -184,13 +191,20 @@ func _process(_delta: float) -> void:
 					## Add Coins
 					print_rich("[i]Add coins...")
 					turn_state = StateController.TurnStates.DrawHex
+					
 				StateController.TurnStates.DrawHex:
 					## Draw a card
 					print_rich("[i]Player.Hand.append(Player.Deck.Draw())")
 					Player.Hand.append(Player.Deck.Draw())
-					print(Player.Deck.getNames(Player.Hand))
-					## Next StateController.TurnStates. Play Hex, ...
-					turn_state = StateController.TurnStates.EndTurn
+					Player.emitHandChanged()
+					## Next StateController.TurnStates. Play Hex, 
+					# ......
+					## Simulate Too many cards drawn
+					if Player.Hand.size() > Player.MaxHandSize:
+						Player.emitHandOverdraw()
+						print(Player.Deck.getNames(Player.Hand))
+						turn_state = StateController.TurnStates.EndTurn
+						
 				StateController.TurnStates.EndTurn:
 					StateController.emitNextGameState()
 			
