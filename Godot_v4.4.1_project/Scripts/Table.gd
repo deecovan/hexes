@@ -87,6 +87,7 @@ class HexClass extends Object:
 class DeckClass extends Object:
 	var Hexes = []
 	var hex = null
+	
 	func Draw() -> HexClass:
 		if Hexes.size() > 0:
 			hex = Hexes[0]
@@ -96,7 +97,7 @@ class DeckClass extends Object:
 			printerr("Deck is empty! Signal GameOver!")
 		return hex
 	
-	func GetNames(hexes = Hexes) -> Array:
+	func getNames(hexes = Hexes) -> Array:
 		var a = []
 		for h in hexes:
 			a.append(h.Name)
@@ -105,11 +106,22 @@ class DeckClass extends Object:
 class PlayerClass extends Object:
 	var Id: int
 	var Deck = DeckClass.new()
-	var Hand = []
 	var Health = 20
 	var DeckSize = 60
 	var HandSize = 6
 	
+	var Hand = []
+			
+	var HandHash: int
+	
+	func _init() -> void:
+		HandHash = hash(Hand)
+		
+	func emitHandChanged():
+		if HandHash != hash(Hand):
+			HandHash = hash(Hand)
+			## Emit Hand Changed
+		
 var StateController: Node
 var Player: PlayerClass
 var Opponent: PlayerClass
@@ -154,8 +166,9 @@ func _process(_delta: float) -> void:
 			print_rich("[b]Draw " + str(Player.HandSize) + "...")
 			for i in Player.HandSize:
 				Player.Hand.append(Player.Deck.Draw())
-			print(Player.Deck.GetNames(Player.Hand))
-			StateController.next_game_state()
+				Player.emitHandChanged()
+			print(Player.Deck.getNames(Player.Hand))
+			StateController.emitNextGameState()
 			
 		StateController.GameStates.Playing:
 			print_rich("now... [color=blue]Playing")
@@ -175,15 +188,15 @@ func _process(_delta: float) -> void:
 					## Draw a card
 					print_rich("[i]Player.Hand.append(Player.Deck.Draw())")
 					Player.Hand.append(Player.Deck.Draw())
-					print(Player.Deck.GetNames(Player.Hand))
+					print(Player.Deck.getNames(Player.Hand))
 					## Next StateController.TurnStates. Play Hex, ...
 					turn_state = StateController.TurnStates.EndTurn
 				StateController.TurnStates.EndTurn:
-					StateController.next_game_state()
+					StateController.emitNextGameState()
 			
 		StateController.GameStates.Ending:
 			print_rich("now... [color=blue]Ending")
-			StateController.next_game_state()
+			StateController.emitNextGameState()
 			
 		StateController.GameStates.Finished:
 			pass

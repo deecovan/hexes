@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://6xevav3qkmfb"]
 
-[ext_resource type="Script" uid="uid://dcyehhgv6gine" path="res://Scripts/Main.gd" id="1_rgh2o"]
+[ext_resource type="Script" uid="uid://dcyehhgv6gine" path="res://Scripts/Input.gd" id="1_rgh2o"]
 [ext_resource type="Theme" uid="uid://bcv2ny2u6crhk" path="res://Themes/Baloo Black/Baloo Black.tres" id="2_idj7w"]
 [ext_resource type="Script" uid="uid://bt2tf0a7y2xld" path="res://Scripts/Table.gd" id="2_jw32o"]
 [ext_resource type="Texture2D" uid="uid://bonchvvpaxlrm" path="res://Assets/wallpaperbetter.jpg" id="2_kln2b"]
-[ext_resource type="Script" uid="uid://ceutfde2jmipt" path="res://Scripts/EnumStateController.gd" id="3_v1gob"]
+[ext_resource type="Script" uid="uid://ceutfde2jmipt" path="res://Scripts/StateController.gd" id="3_v1gob"]
 [ext_resource type="Script" uid="uid://c3ia6dxg53tq6" path="res://Scripts/TablePart.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://iyd3t2chjorn" path="res://Scenes/Card.tscn" id="5_v1gob"]
 
