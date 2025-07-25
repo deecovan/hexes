@@ -5,7 +5,7 @@
 - Loop 3 times
   - Limit to 8 cards
   - Stop on 9th
-  - Discard the card with button
+a. Discard the card with button
     * Add button signal
     * Add Discard func
     * Check and loop
